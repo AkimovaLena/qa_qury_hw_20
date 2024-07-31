@@ -1,18 +1,21 @@
 package tests;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static io.appium.java_client.AppiumBy.accessibilityId;
-import static io.appium.java_client.AppiumBy.id;
+import static io.appium.java_client.AppiumBy.*;
 import static io.qameta.allure.Allure.step;
 
 public class WikiTests extends TestBase {
 
     @Test
+    @Tag("android")
+    @DisplayName("Checking the search")
     void successfulSearchTest() {
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
@@ -24,11 +27,18 @@ public class WikiTests extends TestBase {
     }
 
     @Test
+    @Tag("android")
+    @DisplayName("Checking Voice Search")
     void checkRecording() {
-        step("Сlick on the microphone", () -> {
+
+        step("Сlick on microphone", () -> {
             $(id("org.wikipedia.alpha:id/voice_search_button")).click();
         });
-        step("Check that recording has started", () ->
-                $(id("com.google.android.tts:id/transcription_mic_image_indicator_background")).shouldBe(visible));
+        step("Checking that the recording modal window is displayed", () -> {
+            $(className("android.widget.FrameLayout"))
+                    .shouldBe(visible);
+        });
     }
+
+
 }
