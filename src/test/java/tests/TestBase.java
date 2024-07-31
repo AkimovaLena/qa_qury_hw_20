@@ -30,7 +30,6 @@ public class TestBase {
     @AfterEach
     void addAttachments() {
         String sessionId = Selenide.sessionId().toString();
-        System.out.println(sessionId);
         Attach.pageSource();
         closeWebDriver();
         Attach.addVideo(sessionId);

@@ -14,6 +14,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
+
+    AuthConfig authData = ConfigFactory.create(AuthConfig.class, System.getProperties());
+    BrowserstackConfig bsConfig = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
+
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
