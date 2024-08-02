@@ -1,4 +1,4 @@
-package tests.all;
+package tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -28,7 +28,7 @@ public class WikiTests extends TestBase {
     }
 
     @Test
-    @Tag("allDevices")
+    @Tag("allDevice")
     @DisplayName("Checking Voice Search")
     void checkRecording() {
         back();
@@ -41,7 +41,7 @@ public class WikiTests extends TestBase {
     }
 
     @Test
-    @Tag("allDevices")
+    @Tag("allDevice")
     @DisplayName("Checking Onboarding View")
     void chekOnboardingViewTest() {
         step("Check that the first onboarding page contains a title \"The Free Encyclopedia\"", () -> {

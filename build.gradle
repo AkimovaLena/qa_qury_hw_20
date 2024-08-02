@@ -64,21 +64,3 @@ task allDevice(type: Test) {
         includeTags("allDevice")
     }
 }
-
-task browserstack(type: Test) {
-    useJUnitPlatform {
-        includeTags("browserstack")
-    }
-}
-
-task local(type: Test) {
-    useJUnitPlatform {
-        includeTags("local")
-    }
-}
-
-task personalPhone(type: Test) {
-    useJUnitPlatform {
-        includeTags("personalPhone")
-    }
-}
