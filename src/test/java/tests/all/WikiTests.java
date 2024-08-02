@@ -27,7 +27,7 @@ public class WikiTests extends TestBase {
     }
 
     @Test
-    @Tag("allDevice")
+    @Tag("allDevices")
     @DisplayName("Checking Voice Search")
     void checkRecording() {
         back();

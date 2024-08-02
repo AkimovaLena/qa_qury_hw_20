@@ -76,3 +76,9 @@ task local(type: Test) {
         includeTags("local")
     }
 }
+
+task personalPhone(type: Test) {
+    useJUnitPlatform {
+        includeTags("personalPhone")
+    }
+}

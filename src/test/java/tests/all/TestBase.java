@@ -5,6 +5,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.BrowserstackDriver;
 import drivers.LocalDrivers;
+import drivers.PersonalPhoneDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -16,16 +17,21 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
-    static final String deviceHost = System.getProperty("deviceHost","local");
+    static final String deviceHost = System.getProperty("deviceHost");
+
 
     @BeforeAll
     static void beforeAll() {
+
         switch (deviceHost) {
             case  ("browserstac"):
                 Configuration.browser = BrowserstackDriver.class.getName();;
                 break;
             case ("local"):
                 Configuration.browser = LocalDrivers.class.getName();
+                break;
+            case ("personalPhone"):
+            Configuration.browser = PersonalPhoneDriver.class.getName();
                 break;
             default:
                 System.out.println("Неверно указан девайс");
