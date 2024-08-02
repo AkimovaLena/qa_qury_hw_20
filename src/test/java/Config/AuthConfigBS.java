@@ -5,7 +5,7 @@ import org.aeonbits.owner.Config;
 @Config.Sources({
         "classpath:auth.properties"
 })
-public interface AuthConfig extends Config {
+public interface AuthConfigBS extends Config {
 
     String user();
     String key();

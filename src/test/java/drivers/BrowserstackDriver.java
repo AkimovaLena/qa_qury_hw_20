@@ -1,6 +1,6 @@
 package drivers;
 
-import Config.AuthConfig;
+import Config.AuthConfigBS;
 import Config.BrowserstackConfig;
 import com.codeborne.selenide.WebDriverProvider;
 import org.aeonbits.owner.ConfigFactory;
@@ -15,14 +15,14 @@ import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
 
-    AuthConfig authData = ConfigFactory.create(AuthConfig.class, System.getProperties());
+    AuthConfigBS authData = ConfigFactory.create(AuthConfigBS.class, System.getProperties());
     BrowserstackConfig bsConfig = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
         MutableCapabilities caps = new MutableCapabilities();
-        AuthConfig authData = ConfigFactory.create(AuthConfig.class, System.getProperties());
+        AuthConfigBS authData = ConfigFactory.create(AuthConfigBS.class, System.getProperties());
         BrowserstackConfig bsConfig = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
         // Set your access credentials
