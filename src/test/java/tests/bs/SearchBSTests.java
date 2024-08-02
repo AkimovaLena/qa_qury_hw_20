@@ -1,7 +1,9 @@
-package tests.local;
+package tests.bs;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import tests.bs.TestBase;
+
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selenide.*;
@@ -9,12 +11,11 @@ import static io.appium.java_client.AppiumBy.accessibilityId;
 import static io.appium.java_client.AppiumBy.id;
 import static io.qameta.allure.Allure.step;
 
-public class SearchTests extends TestBase {
+public class SearchBSTests extends TestBase {
 
     @Test
-    @Tag("local")
+    @Tag("browserstack")
     void successfulSearchTest() {
-        back();
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");

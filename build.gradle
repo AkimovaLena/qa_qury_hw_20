@@ -59,14 +59,20 @@ tasks.withType(Test) {
 }
 
 
-task android(type: Test) {
+task allDevice(type: Test) {
     useJUnitPlatform {
-        includeTags("android")
+        includeTags("allDevice")
     }
 }
 
-task news(type: Test) {
+task browserstack(type: Test) {
     useJUnitPlatform {
-        includeTags("new")
+        includeTags("browserstack")
+    }
+}
+
+task local(type: Test) {
+    useJUnitPlatform {
+        includeTags("local")
     }
 }

@@ -1,10 +1,9 @@
-package tests;
+package tests.bs;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.BrowserstackDriver;
-import drivers.LocalDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -19,19 +18,8 @@ public class TestBase {
     static void beforeAll() {
 
 
-        String deviceHost = System.getProperty("deviceHost","local");
 
-        switch (deviceHost) {
-            case  ("browserstac"):
-                Configuration.browser = BrowserstackDriver.class.getName();;
-                break;
-            case ("local"):
-                Configuration.browser = LocalDriver.class.getName();
-                break;
-            default:
-                System.out.println("Неверно указан девайс");
-                break;
-        }
+        Configuration.browser = BrowserstackDriver.class.getName();;
 
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
