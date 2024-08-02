@@ -35,8 +35,8 @@ public class WikiTests extends TestBase {
             $(id("org.wikipedia.alpha:id/voice_search_button")).click();
         });
         step("Checking that the recording modal window is displayed", () -> {
-            $(className("android.widget.FrameLayout"))
-                    .shouldBe(visible);
+           $(className("android.widget.FrameLayout")).shouldBe(visible);
+//            $(id("com.google.android.tts:id/transcription_intent_api_recognizer")).shouldBe(visible);
         });
     }
 
