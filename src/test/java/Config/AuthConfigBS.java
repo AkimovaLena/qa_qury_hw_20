@@ -8,6 +8,7 @@ import org.aeonbits.owner.Config;
 public interface AuthConfigBS extends Config {
 
     String user();
+
     String key();
 
 }

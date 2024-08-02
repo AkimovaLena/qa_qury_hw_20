@@ -2,7 +2,6 @@ package drivers;
 
 
 import Config.PersonalPhoneConfig;
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverProvider;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -31,8 +30,6 @@ public class PersonalPhoneDriver implements WebDriverProvider {
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
         UiAutomator2Options options = new UiAutomator2Options();
 
-        System.out.println("ИМЯ  "+config.deviceName());
-
         options.setAutomationName(ANDROID_UIAUTOMATOR2)
                 .setPlatformName(ANDROID)
                 .setDeviceName(config.deviceName())
@@ -40,7 +37,8 @@ public class PersonalPhoneDriver implements WebDriverProvider {
                 .setAppPackage(config.appPackage())
                 .setAppActivity(config.appActivity())
                 .setLanguage(config.appLanguage())
-                .setLocale(config.appLocale());;
+                .setLocale(config.appLocale());
+        ;
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }

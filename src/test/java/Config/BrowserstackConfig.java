@@ -9,10 +9,16 @@ import org.aeonbits.owner.Config;
 public interface BrowserstackConfig extends Config {
 
     String app();
+
     String device();
+
     String osVersion();
+
     String project();
+
     String build();
+
     String name();
+
     String url();
 }

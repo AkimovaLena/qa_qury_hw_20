@@ -9,12 +9,19 @@ import org.aeonbits.owner.Config;
 public interface LocalConfig extends Config {
 
     String version();
+
     String deviceName();
+
     String appPackage();
+
     String appActivity();
+
     String url();
+
     String appVersion();
+
     String appUrl();
+
     String appPath();
 
 }
