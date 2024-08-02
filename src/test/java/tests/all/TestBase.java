@@ -17,21 +17,21 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
-    static final String deviceHost = System.getProperty("deviceHost");
+    static final String deviceHost = System.getProperty("deviceHost", "browserstac");
 
 
     @BeforeAll
     static void beforeAll() {
 
         switch (deviceHost) {
-            case  ("browserstac"):
-                Configuration.browser = BrowserstackDriver.class.getName();;
+            case ("browserstac"):
+                Configuration.browser = BrowserstackDriver.class.getName();
                 break;
             case ("local"):
                 Configuration.browser = LocalDrivers.class.getName();
                 break;
             case ("personalPhone"):
-            Configuration.browser = PersonalPhoneDriver.class.getName();
+                Configuration.browser = PersonalPhoneDriver.class.getName();
                 break;
             default:
                 System.out.println("Неверно указан девайс");
