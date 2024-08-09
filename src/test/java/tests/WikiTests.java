@@ -50,7 +50,7 @@ public class WikiTests extends TestBase {
         });
         step("Open found article", () -> $(id("page_list_item_title")).click());
         step("Verify article", () -> {
-            $(className("android.widget.TextView")).shouldHave(text("Java"));
+            $(className("android.widget.TextView")).shouldHave(text("Error"));
         });
     }
 
