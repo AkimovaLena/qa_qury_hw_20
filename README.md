@@ -2,7 +2,7 @@
 ***
 Для запуска тестов локально на реальном необходмо выполнить команду:
 ```shell
-gradle allDevice -DdeviceHost=personalPhone
+gradle allDevice -DdeviceHost=realPhone
 ```
 ***
 Для запуска тестов локально на эмуляторе необходмо выполнить команду:

@@ -1,7 +1,7 @@
 package drivers;
 
-import Config.AuthConfigBS;
-import Config.BrowserstackConfig;
+import config.AuthConfigBS;
+import config.BrowserstackConfig;
 import com.codeborne.selenide.WebDriverProvider;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;

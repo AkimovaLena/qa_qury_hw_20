@@ -1,7 +1,7 @@
 package drivers;
 
 
-import Config.PersonalPhoneConfig;
+import config.RealPhoneConfig;
 import com.codeborne.selenide.WebDriverProvider;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -20,10 +20,10 @@ import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
-public class PersonalPhoneDriver implements WebDriverProvider {
+public class RealPhoneDriver implements WebDriverProvider {
 
 
-    static PersonalPhoneConfig config = ConfigFactory.create(PersonalPhoneConfig.class, System.getProperties());
+    static RealPhoneConfig config = ConfigFactory.create(RealPhoneConfig.class, System.getProperties());
 
     @Nonnull
     @Override

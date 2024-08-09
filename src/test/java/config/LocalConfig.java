@@ -1,11 +1,15 @@
-package Config;
+package config;
 
 import org.aeonbits.owner.Config;
 
+
 @Config.Sources({
-        "classpath:personal.properties"
+        "classpath:local.properties"
 })
-public interface PersonalPhoneConfig extends Config {
+public interface LocalConfig extends Config {
+
+    String version();
+
     String deviceName();
 
     String appPackage();
@@ -19,9 +23,5 @@ public interface PersonalPhoneConfig extends Config {
     String appUrl();
 
     String appPath();
-
-    String appLanguage();
-
-    String appLocale();
 
 }

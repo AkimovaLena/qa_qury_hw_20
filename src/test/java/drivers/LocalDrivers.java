@@ -1,6 +1,6 @@
 package drivers;
 
-import Config.LocalConfig;
+import config.LocalConfig;
 import com.codeborne.selenide.WebDriverProvider;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;

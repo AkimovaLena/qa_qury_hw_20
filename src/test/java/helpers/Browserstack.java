@@ -1,6 +1,6 @@
 package helpers;
 
-import Config.AuthConfigBS;
+import config.AuthConfigBS;
 import org.aeonbits.owner.ConfigFactory;
 
 import static io.restassured.RestAssured.given;
@@ -19,8 +19,7 @@ public class Browserstack {
                 .auth().basic(authData.user(), authData.key())
                 .get(url)
                 .then()
-                .log().status()
-                .log().body()
+                .log().all()
                 .statusCode(200)
                 .extract().path("automation_session.video_url");
     }
