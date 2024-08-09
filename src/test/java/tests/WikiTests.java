@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -36,7 +37,20 @@ public class WikiTests extends TestBase {
         });
         step("Checking that the recording modal window is displayed", () -> {
            $(className("android.widget.FrameLayout")).shouldBe(visible);
-//            $(id("com.google.android.tts:id/transcription_intent_api_recognizer")).shouldBe(visible);
+        });
+    }
+
+    @Test
+    @Tag("android")
+    @DisplayName("Open found article")
+    void successfulOpenArticleTest() {
+        step("Type search", () -> {
+            $(accessibilityId("Search Wikipedia")).click();
+            $(id("search_src_text")).sendKeys("java");
+        });
+        step("Open found article", () -> $(id("page_list_item_title")).click());
+        step("Verify article", () -> {
+            $(className("android.widget.TextView")).shouldHave(text("Java"));
         });
     }
 
